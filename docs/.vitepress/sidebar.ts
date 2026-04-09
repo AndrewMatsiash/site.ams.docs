@@ -2,10 +2,16 @@ import type { DefaultTheme } from 'vitepress'
 
 export const nav: DefaultTheme.NavItem[] = [
   { text: 'Главная', link: '/' },
-  { text: 'Гайд', link: '/guide' }
+  { text: 'Гайд', link: '/guide' },
+  { text: 'UI Kit', link: '/ui-kit' }
 ]
 
 export const sidebar: DefaultTheme.SidebarItem[] = [
+  {
+    text: 'UI Kit',
+    collapsed: false,
+    items: [{ text: 'Components preview', link: '/ui-kit' }]
+  },
   {
     text: 'Whatsminer Firmware',
     collapsed: true,
