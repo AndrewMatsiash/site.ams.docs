@@ -1,17 +1,16 @@
 <script setup lang="ts">
-const searchIconSrc = 'http://localhost:3845/assets/fa6dc100da9c400e37ac75c78550fef3ed38a88a.svg'
-const backIconSrc = 'http://localhost:3845/assets/5ea1d003c8ff310a6b79f9de932643743356e328.svg'
+import { ChevronLeftIcon, SearchIcon } from '../ui/icons'
 </script>
 
 <template>
   <div class="app-sidebar-top">
     <a class="app-sidebar-top__back" href="/">
-      <img :src="backIconSrc" alt="" class="app-sidebar-top__back-icon" />
+      <ChevronLeftIcon class="app-sidebar-top__back-icon" />
       Go to BiXBiT
     </a>
 
     <div class="app-sidebar-top__search">
-      <img :src="searchIconSrc" alt="" class="app-sidebar-top__search-icon" />
+      <SearchIcon class="app-sidebar-top__search-icon" />
       <input type="text" placeholder="Search" aria-label="Search" />
     </div>
   </div>
@@ -43,7 +42,6 @@ const backIconSrc = 'http://localhost:3845/assets/5ea1d003c8ff310a6b79f9de932643
   width: 24px;
   height: 24px;
   display: block;
-  transform: rotate(90deg);
 }
 
 .app-sidebar-top__search {
@@ -60,6 +58,12 @@ const backIconSrc = 'http://localhost:3845/assets/5ea1d003c8ff310a6b79f9de932643
   width: 24px;
   height: 24px;
   flex: 0 0 24px;
+}
+
+.app-sidebar-top__back-icon :deep(svg),
+.app-sidebar-top__search-icon :deep(svg) {
+  width: 24px;
+  height: 24px;
 }
 
 .app-sidebar-top__search input {

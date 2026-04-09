@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const logoSrc = 'http://localhost:3845/assets/2d19b68d65d9dc9104dbb63d5c0c9f53e23fb4ef.svg'
+import { BixbitLogoIcon } from '../ui/icons'
 </script>
 
 <template>
@@ -7,7 +7,7 @@ const logoSrc = 'http://localhost:3845/assets/2d19b68d65d9dc9104dbb63d5c0c9f53e2
     <div class="app-header__inner">
       <a class="app-header__brand" href="/">
         <span class="app-header__logo-wrap">
-          <img :src="logoSrc" alt="Bixbit logo" class="app-header__logo" />
+          <BixbitLogoIcon class="app-header__logo" />
         </span>
         <span class="app-header__title">Documentation</span>
       </a>
@@ -46,14 +46,19 @@ const logoSrc = 'http://localhost:3845/assets/2d19b68d65d9dc9104dbb63d5c0c9f53e2
 }
 
 .app-header__logo-wrap {
-  width: 80px;
+  width: 88px;
   height: 24px;
-  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
 }
 
 .app-header__logo {
-  width: 100%;
-  height: 100%;
+  display: block;
+}
+
+.app-header__logo :deep(svg) {
+  width: 80px;
+  height: 24px;
   display: block;
 }
 
