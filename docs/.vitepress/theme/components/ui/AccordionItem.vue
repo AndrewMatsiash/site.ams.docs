@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import { ChevronDownIcon } from './icons'
 
 const props = withDefaults(
@@ -16,17 +15,16 @@ const props = withDefaults(
   }
 )
 
-const bodyVisible = computed(() => props.expanded)
 </script>
 
 <template>
-  <div class="accordion-item" :class="{ 'is-expanded': bodyVisible }">
-    <div class="accordion-item__header">
-      <p class="accordion-item__title">{{ title }}</p>
+  <details class="accordion-item" :open="expanded">
+    <summary class="accordion-item__header">
+      <span class="accordion-item__title">{{ title }}</span>
       <ChevronDownIcon class="accordion-item__icon" />
-    </div>
-    <p v-if="bodyVisible" class="accordion-item__description">{{ description }}</p>
-  </div>
+    </summary>
+    <p class="accordion-item__description">{{ description }}</p>
+  </details>
 </template>
 
 <style scoped>
@@ -36,13 +34,32 @@ const bodyVisible = computed(() => props.expanded)
   border-radius: 8px;
   background: rgba(235, 235, 235, 0.2);
   padding: 20px;
+  height: 64px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.accordion-item[open] {
+  height: auto;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .accordion-item__header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
+  cursor: pointer;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion-item__header::-webkit-details-marker {
+  display: none;
 }
 
 .accordion-item__title {
@@ -57,9 +74,13 @@ const bodyVisible = computed(() => props.expanded)
 
 .accordion-item__icon {
   color: #1d1d1f;
+  transform: rotate(-90deg);
+  transition: transform 180ms ease;
+  flex: 0 0 24px;
+  margin-left: auto;
 }
 
-.accordion-item.is-expanded .accordion-item__icon {
+.accordion-item[open] .accordion-item__icon {
   transform: rotate(180deg);
 }
 
@@ -70,7 +91,8 @@ const bodyVisible = computed(() => props.expanded)
 }
 
 .accordion-item__description {
-  margin: 20px 0 0;
+  margin: 0;
+  width: 100%;
   font-family: "DIN Pro", sans-serif;
   font-size: 16px;
   font-weight: 400;
