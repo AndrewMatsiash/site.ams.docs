@@ -1,0 +1,74 @@
+# Decap CMS → коммиты в GitHub. После правок при необходимости обновите docs/.vitepress/sidebar.ts
+#
+# Сайт: https://andrewmatsiash.github.io/site.ams.docs/
+# Админка: https://andrewmatsiash.github.io/site.ams.docs/admin/
+#
+# base_url — только OAuth-прокси (Cloudflare Worker), не github.io:
+#   https://decapcms.org/docs/authentication-backends/#using-github-with-an-oauth-proxy
+
+backend:
+  name: github
+  repo: AndrewMatsiash/site.ams.docs
+  branch: main
+  base_url: https://site-ams-decap.bixbit-docs-oauth.workers.dev
+  auth_endpoint: /auth
+
+# Картинки из CMS → docs/public/images → на сайте /images/... (с учётом base VitePress)
+media_folder: docs/public/images
+public_folder: /images
+
+collections:
+  - name: docs_root
+    label: Страницы (корень docs)
+    folder: docs
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Заголовок, name: title, widget: string, required: false }
+      - { label: Текст, name: body, widget: markdown }
+
+  - name: whatsminer_firmware
+    label: Whatsminer Firmware
+    folder: docs/whatsminer-firmware
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Заголовок, name: title, widget: string, required: false }
+      - { label: Текст, name: body, widget: markdown }
+
+  - name: antminer_firmware
+    label: Antminer Firmware
+    folder: docs/antminer-firmware
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Заголовок, name: title, widget: string, required: false }
+      - { label: Текст, name: body, widget: markdown }
+
+  - name: automated
+    label: Automated
+    folder: docs/automated
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Заголовок, name: title, widget: string, required: false }
+      - { label: Текст, name: body, widget: markdown }
+
+  - name: user_guide_whatsminer
+    label: User guide Whatsminer ASIC
+    folder: docs/user-guide-whatsminer-asic
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Заголовок, name: title, widget: string, required: false }
+      - { label: Текст, name: body, widget: markdown }
