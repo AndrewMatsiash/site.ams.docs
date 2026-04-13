@@ -1,7 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { nav, sidebar } from './sidebar'
 
-/** Публичный префикс на GitHub Pages: /имя-репо/. Для корня (репо user.github.io или свой домен) поставьте '/'. */
 const base = '/site.ams.docs/'
 
 export default defineConfig({
@@ -10,6 +9,17 @@ export default defineConfig({
   description: 'Documentation prototype',
   themeConfig: {
     nav,
-    sidebar
+    sidebar,
+    search: {
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: 'Поиск',
+            buttonAriaLabel: 'Поиск по документации'
+          }
+        }
+      }
+    }
   }
 })
