@@ -3,7 +3,7 @@ title: UI Kit
 ---
 
 <script setup lang="ts">
-import ThemeBrandColorControls from './.vitepress/theme/components/ui/ThemeBrandColorControls.vue'
+import ThemeBrandColorControls from '../.vitepress/theme/components/ui/ThemeBrandColorControls.vue'
 </script>
 
 ## Цвета темы (`--vp-c-brand-*`)
@@ -214,7 +214,7 @@ export default {
 
 Фрагмент из `docs/.vitepress/config.ts` (строки 6–11):
 
-<<< ./.vitepress/config.ts{6-11}
+<<< ../.vitepress/config.ts{6-11}
 
 ### Блок без языка
 
