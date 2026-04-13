@@ -1,7 +1,7 @@
 ---
-title: Antminer Firmware
+title: Прошивка Antminer
 ---
 
-# Antminer Firmware
+# Прошивка Antminer
 
-This page is a starter placeholder.
+Черновик страницы.

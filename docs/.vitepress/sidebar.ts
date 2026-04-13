@@ -1,10 +1,44 @@
 import type { DefaultTheme } from 'vitepress'
 
-export const nav: DefaultTheme.NavItem[] = [
-  { text: 'Get in touch', link: '/' },
+const sidebarPaths: DefaultTheme.SidebarItem[] = [
+  {
+    text: 'UI Kit',
+    collapsed: false,
+    items: [{ text: 'Предпросмотр компонентов', link: '/ui-kit' }]
+  },
+  {
+    text: 'Прошивка Whatsminer',
+    collapsed: true,
+    items: [
+      { text: 'Технические требования', link: '/whatsminer-firmware/technical-requirements' },
+      { text: 'Подключение устройства', link: '/whatsminer-firmware/connecting-a-device' },
+      {
+        text: 'Первоначальная настройка',
+        items: [
+          { text: 'Поиск майнера в сети', link: '/whatsminer-firmware/network-identification' },
+          { text: 'Настройка отображения данных', link: '/whatsminer-firmware/data-display-setup' }
+        ]
+      }
+    ]
+  },
+  {
+    text: 'Прошивка Antminer',
+    collapsed: true,
+    items: [{ text: 'Обзор', link: '/antminer-firmware/' }]
+  },
+  {
+    text: 'Автоматизация',
+    collapsed: true,
+    items: [{ text: 'Обзор', link: '/automated/' }]
+  },
+  {
+    text: 'Руководство по Whatsminer ASIC',
+    collapsed: true,
+    items: [{ text: 'Обзор', link: '/user-guide-whatsminer-asic/' }]
+  }
 ]
 
-export const sidebar: DefaultTheme.SidebarItem[] = [
+const sidebarPathsEn: DefaultTheme.SidebarItem[] = [
   {
     text: 'UI Kit',
     collapsed: false,
@@ -41,3 +75,24 @@ export const sidebar: DefaultTheme.SidebarItem[] = [
     items: [{ text: 'Overview', link: '/user-guide-whatsminer-asic/' }]
   }
 ]
+
+function prefixSidebarLinks(items: DefaultTheme.SidebarItem[], prefix: string): DefaultTheme.SidebarItem[] {
+  return items.map((item) => {
+    const next = { ...item } as DefaultTheme.SidebarItem
+    if (item.link) {
+      next.link = `${prefix}${item.link}`
+    }
+    if (item.items) {
+      next.items = prefixSidebarLinks(item.items, prefix)
+    }
+    return next
+  })
+}
+
+export const navRu: DefaultTheme.NavItem[] = [{ text: 'Связаться', link: '/' }]
+
+export const navEn: DefaultTheme.NavItem[] = [{ text: 'Get in touch', link: '/en/' }]
+
+export const sidebarRu = sidebarPaths
+
+export const sidebarEn = prefixSidebarLinks(sidebarPathsEn, '/en')

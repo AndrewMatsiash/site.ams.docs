@@ -1,7 +1,7 @@
 ---
-title: Automated
+title: Автоматизация
 ---
 
-# Automated
+# Автоматизация
 
-This page is a starter placeholder.
+Черновик страницы.
