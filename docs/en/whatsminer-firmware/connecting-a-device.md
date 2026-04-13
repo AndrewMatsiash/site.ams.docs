@@ -2,7 +2,7 @@
 title: Connecting a device
 ---
 
-<p class="doc-kicker">Whatsminer Firmware</p>
+<h3 class="doc-kicker">Whatsminer Firmware</h3>
 
 # Connecting a device
 

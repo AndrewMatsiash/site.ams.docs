@@ -142,10 +142,28 @@
 }
 
 .vp-doc .doc-kicker {
+  margin: 0;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: 120%;
   letter-spacing: -0.03px;
   color: var(--vp-c-brand-1);
+}
+
+.vp-doc li + li {
+  margin-top: 20px;
+}
+
+.vp-doc h1 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.vp-doc h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.03px;
 }
