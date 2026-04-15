@@ -3,44 +3,52 @@ import { navEn, navRu, sidebarEn, sidebarRu } from './sidebar'
 
 const base = '/site.ams.docs/'
 
-/**
- * Algolia DocSearch: общий блок для всего сайта.
- * При i18n нельзя держать search только в locales.*.themeConfig — в теме для шапки
- * берётся merge с корневым themeConfig; если он пустой, VPNavBarSearch не видит provider.
- * Переводы кнопки/placeholder — через options.locales (см. resolveOptionsForLanguage в теме).
- */
-const algoliaOptions = {
-  appId: 'PMZUYBQDAK',
-  apiKey: '24b09689d5b4223813d9b8e48563c8f6',
-  indexName: 'docsearch',
-  askAi: {
-    assistantId: 'askAIDemo',
-    sidePanel: {
-      panel: {
-        variant: 'floating' as const,
-        side: 'right' as const,
-        width: '360px',
-        expandedWidth: '580px',
-        suggestedQuestions: true
-      }
-    }
-  },
+/** Локальный поиск (MiniSearch) — индекс собирается при сборке, без Algolia. */
+const localSearchOptions = {
   locales: {
     root: {
-      placeholder: 'Поиск по документации',
       translations: {
         button: {
           buttonText: 'Поиск',
           buttonAriaLabel: 'Поиск по документации'
+        },
+        modal: {
+          noResultsText: 'Ничего не найдено',
+          resetButtonTitle: 'Сбросить',
+          backButtonTitle: 'Назад',
+          displayDetails: 'Показать подробности',
+          footer: {
+            selectText: 'перейти',
+            selectKeyAriaLabel: 'Enter',
+            navigateText: 'навигация',
+            navigateUpKeyAriaLabel: 'Стрелка вверх',
+            navigateDownKeyAriaLabel: 'Стрелка вниз',
+            closeText: 'закрыть',
+            closeKeyAriaLabel: 'Escape'
+          }
         }
       }
     },
     en: {
-      placeholder: 'Search documentation',
       translations: {
         button: {
           buttonText: 'Search',
           buttonAriaLabel: 'Search documentation'
+        },
+        modal: {
+          noResultsText: 'No results found',
+          resetButtonTitle: 'Reset search',
+          backButtonTitle: 'Back',
+          displayDetails: 'Display detailed list',
+          footer: {
+            selectText: 'to select',
+            selectKeyAriaLabel: 'enter',
+            navigateText: 'to navigate',
+            navigateUpKeyAriaLabel: 'up arrow',
+            navigateDownKeyAriaLabel: 'down arrow',
+            closeText: 'to close',
+            closeKeyAriaLabel: 'escape'
+          }
         }
       }
     }
@@ -51,8 +59,8 @@ export default defineConfig({
   base,
   themeConfig: {
     search: {
-      provider: 'algolia',
-      options: algoliaOptions
+      provider: 'local',
+      options: localSearchOptions
     }
   },
   locales: {
