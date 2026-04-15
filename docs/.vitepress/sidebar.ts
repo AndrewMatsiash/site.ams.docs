@@ -89,9 +89,9 @@ function prefixSidebarLinks(items: DefaultTheme.SidebarItem[], prefix: string): 
   })
 }
 
-export const navRu: DefaultTheme.NavItem[] = [{ text: 'Связаться', link: '/' }]
+export const navRu: DefaultTheme.NavItem[] = []
 
-export const navEn: DefaultTheme.NavItem[] = [{ text: 'Get in touch', link: '/en/' }]
+export const navEn: DefaultTheme.NavItem[] = []
 
 export const sidebarRu = sidebarPaths
 

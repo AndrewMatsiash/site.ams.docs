@@ -3,7 +3,6 @@ import { navEn, navRu, sidebarEn, sidebarRu } from './sidebar'
 
 const base = '/site.ams.docs/'
 
-/** Локальный поиск (MiniSearch) — индекс собирается при сборке, без Algolia. */
 const localSearchOptions = {
   locales: {
     root: {
@@ -58,6 +57,11 @@ const localSearchOptions = {
 export default defineConfig({
   base,
   themeConfig: {
+    logo: {
+      light: '/images/logo.svg',
+      dark: '/images/logo-dark.svg',
+      alt: 'AMS Docs'
+    },
     search: {
       provider: 'local',
       options: localSearchOptions
@@ -67,7 +71,7 @@ export default defineConfig({
     root: {
       label: 'Русский',
       lang: 'ru-RU',
-      title: 'AMS Docs',
+      title: 'Документация',
       description: 'Документация',
       themeConfig: {
         nav: navRu,
@@ -87,7 +91,7 @@ export default defineConfig({
       label: 'English',
       lang: 'en-US',
       link: '/en/',
-      title: 'AMS Docs',
+      title: 'Documentation',
       description: 'Documentation',
       themeConfig: {
         nav: navEn,

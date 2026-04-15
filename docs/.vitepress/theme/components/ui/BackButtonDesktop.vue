@@ -32,16 +32,29 @@ withDefaults(
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #101010;
-  transition: color 180ms ease;
+  color: var(--vp-c-text-1);
+  transition: color 180ms ease, filter 180ms ease;
+  cursor: pointer;
 }
 
-.back-button-desktop:hover {
-  color: #e947a0;
+.back-button-desktop:hover,
+.back-button-desktop:focus-visible {
+  color: var(--vp-c-brand-1);
+}
+
+.back-button-desktop:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
 }
 
 .back-button-desktop:active {
-  color: #d9017a;
+  color: var(--vp-c-brand-1);
+  filter: brightness(1.12);
+}
+
+/* Тёмная тема: чуть мягче «нажатие», чтобы не выбеливать */
+.dark .back-button-desktop:active {
+  filter: brightness(1.06);
 }
 
 .back-button-desktop__label {
