@@ -2,21 +2,7 @@
 title: UI Kit
 ---
 
-<script setup lang="ts">
-import ThemeBrandColorControls from '../.vitepress/theme/components/ui/ThemeBrandColorControls.vue'
-</script>
-
-## Theme colors (`--vp-c-brand-*`)
-
-The controls below set CSS variables on `<html>` so you can see the effect on links and accents on this page.
-
-<ThemeBrandColorControls />
-
----
-
 ## Markdown reference (VitePress)
-
-Live examples of VitePress Markdown extensions. Full reference: [Markdown Extensions](https://vitepress.dev/guide/markdown).
 
 ### Оглавление вставки `[[toc]]`
 
@@ -64,18 +50,11 @@ Live examples of VitePress Markdown extensions. Full reference: [Markdown Extens
 
 Внешняя: [Vue.js](https://vuejs.org/) (откроется в новой вкладке).
 
-Internal link example: [Guide](./guide.md).
+Internal link example: [Home](./index.md).
 
 ### Emoji
 
 :tada: :+1: :rocket:
-
-### Badge (компонент темы)
-
-<Badge type="info" text="info" />
-<Badge type="tip" text="tip" />
-<Badge type="warning" text="warning" />
-<Badge type="danger" text="danger" />
 
 ### Контейнеры `::: type`
 

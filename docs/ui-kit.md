@@ -4,7 +4,6 @@ title: UI Kit
 
 ## Справочник Markdown (VitePress)
 
-Ниже — живые примеры того, что понимает VitePress поверх обычного Markdown. Полное описание: [Markdown Extensions](https://vitepress.dev/guide/markdown).
 
 ### Оглавление вставки `[[toc]]`
 
@@ -52,18 +51,12 @@ title: UI Kit
 
 Внешняя: [Vue.js](https://vuejs.org/) (откроется в новой вкладке).
 
-Внутренняя на страницу доки (пример): [Гайд](./guide.md).
+Внутренняя на страницу доки (пример): [Главная](./index.md).
 
 ### Emoji
 
 :tada: :+1: :rocket:
 
-### Badge (компонент темы)
-
-<Badge type="info" text="info" />
-<Badge type="tip" text="tip" />
-<Badge type="warning" text="warning" />
-<Badge type="danger" text="danger" />
 
 ### Контейнеры `::: type`
 

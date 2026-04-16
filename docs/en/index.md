@@ -6,4 +6,4 @@ title: Home
 
 Documentation prototype.
 
-Go to the [Guide](/en/guide).
+Go to the [UI Kit](/en/ui-kit).
