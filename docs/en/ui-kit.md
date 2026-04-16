@@ -74,7 +74,7 @@ Internal link example: [Home](./index.md).
 Контейнер **danger**.
 :::
 
-::: details Нажми, чтобы раскрыть
+::: details Press to expand
 Скрытый текст. Внутри может быть код:
 
 ```js
