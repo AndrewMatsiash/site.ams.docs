@@ -1,19 +1,19 @@
 ---
-title: Настройка отображения данных
+title: Data display setup
 ---
 
-# Настройка отображения данных
+# Data display setup
 
-Черновик страницы.
+This page is a starter placeholder.
 
-## Параметры отображения
+## Display options
 
-Выберите метрики, видимые по умолчанию.
+Choose which metrics should be visible by default.
 
-## Макет
+## Layout preferences
 
-Настройте таблицу/карточки и порядок.
+Set table/card layout and ordering preferences.
 
-## Сохранение
+## Save and review
 
-Примените настройки и проверьте значения на панели.
+Apply settings and confirm values on the dashboard.

@@ -1,19 +1,19 @@
 ---
-title: Поиск майнера в сети
+title: Miner identification on the network
 ---
 
-# Поиск майнера в сети
+# Miner identification on the network
 
-Черновик страницы.
+This page is a starter placeholder.
 
-## Сканирование сети
+## Scan network
 
-Обнаружьте устройства в локальном сегменте.
+Detect available devices in your local segment.
 
-## Сопоставление устройства
+## Match device
 
-Определите нужный майнер по IP или имени хоста.
+Identify the correct miner by IP or hostname.
 
-## Проверка доступа
+## Confirm access
 
-Откройте веб-интерфейс устройства и убедитесь в связи.
+Open the device interface and verify connectivity.

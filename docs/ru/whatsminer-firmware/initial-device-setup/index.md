@@ -1,19 +1,19 @@
 ---
-title: Первоначальная настройка устройства
+title: Initial device setup
 ---
 
-# Первоначальная настройка устройства
+# Initial device setup
 
-Черновик страницы.
+This page is a starter placeholder.
 
-## Первый запуск
+## First launch
 
-Включите устройство и дождитесь инициализации.
+Power on the device and wait for initialization.
 
-## Базовая конфигурация
+## Basic configuration
 
-Задайте обязательные параметры до промышленной эксплуатации.
+Set required options before production use.
 
-## Проверка
+## Validation
 
-Подтвердите значения и сохраните конфигурацию.
+Confirm setup values and save the configuration.
