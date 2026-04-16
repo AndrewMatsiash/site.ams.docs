@@ -47,6 +47,15 @@ collections:
     folder: docs/whatsminer-firmware
     create: true
     slug: '{{slug}}'
+    nested:
+      depth: 10
+      summary: '{{title}}'
+      subfolders: false
+    meta:
+      path:
+        widget: string
+        label: Path
+        index_file: index
     extension: md
     format: frontmatter
     identifier_field: title
@@ -59,6 +68,15 @@ collections:
     folder: docs/en/whatsminer-firmware
     create: true
     slug: '{{slug}}'
+    nested:
+      depth: 10
+      summary: '{{title}}'
+      subfolders: false
+    meta:
+      path:
+        widget: string
+        label: Path
+        index_file: index
     extension: md
     format: frontmatter
     identifier_field: title
@@ -71,6 +89,15 @@ collections:
     folder: docs/antminer-firmware
     create: true
     slug: '{{slug}}'
+    nested:
+      depth: 10
+      summary: '{{title}}'
+      subfolders: false
+    meta:
+      path:
+        widget: string
+        label: Path
+        index_file: index
     extension: md
     format: frontmatter
     identifier_field: title
@@ -83,6 +110,15 @@ collections:
     folder: docs/en/antminer-firmware
     create: true
     slug: '{{slug}}'
+    nested:
+      depth: 10
+      summary: '{{title}}'
+      subfolders: false
+    meta:
+      path:
+        widget: string
+        label: Path
+        index_file: index
     extension: md
     format: frontmatter
     identifier_field: title
@@ -95,6 +131,15 @@ collections:
     folder: docs/automated
     create: true
     slug: '{{slug}}'
+    nested:
+      depth: 10
+      summary: '{{title}}'
+      subfolders: false
+    meta:
+      path:
+        widget: string
+        label: Path
+        index_file: index
     extension: md
     format: frontmatter
     identifier_field: title
@@ -107,6 +152,15 @@ collections:
     folder: docs/en/automated
     create: true
     slug: '{{slug}}'
+    nested:
+      depth: 10
+      summary: '{{title}}'
+      subfolders: false
+    meta:
+      path:
+        widget: string
+        label: Path
+        index_file: index
     extension: md
     format: frontmatter
     identifier_field: title
@@ -119,6 +173,15 @@ collections:
     folder: docs/user-guide-whatsminer-asic
     create: true
     slug: '{{slug}}'
+    nested:
+      depth: 10
+      summary: '{{title}}'
+      subfolders: false
+    meta:
+      path:
+        widget: string
+        label: Path
+        index_file: index
     extension: md
     format: frontmatter
     identifier_field: title
@@ -131,6 +194,15 @@ collections:
     folder: docs/en/user-guide-whatsminer-asic
     create: true
     slug: '{{slug}}'
+    nested:
+      depth: 10
+      summary: '{{title}}'
+      subfolders: false
+    meta:
+      path:
+        widget: string
+        label: Path
+        index_file: index
     extension: md
     format: frontmatter
     identifier_field: title
