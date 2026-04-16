@@ -57,6 +57,7 @@ const localSearchOptions = {
 export default defineConfig(
   withLocalizedSidebar({
     base,
+    rewrites: (id) => (id.startsWith('ru/') ? id.slice(3) : id),
     themeConfig: {
       logo: {
         light: '/images/logo.svg',

@@ -195,7 +195,7 @@ export default {
 
 Фрагмент из `docs/.vitepress/config.ts` (строки 6–11):
 
-<<< ./.vitepress/config.ts{6-11}
+<<< ../.vitepress/config.ts{6-11}
 
 ### Блок без языка
 
