@@ -1,0 +1,83 @@
+name: Create PageCMS pull request
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS payload as JSON
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  create-pr:
+    name: Create or update PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract PageCMS branch
+        id: payload
+        env:
+          PAYLOAD: ${{ inputs.payload }}
+        run: |
+          source_branch="$(jq -r '.repository.ref // ""' <<< "$PAYLOAD")"
+          source_branch="${source_branch#refs/heads/}"
+
+          if [ -z "$source_branch" ]; then
+            echo "::error::Pages CMS did not provide a source branch."
+            exit 1
+          fi
+
+          if [ "$source_branch" = "main" ]; then
+            echo "::error::Switch Pages CMS to a non-main branch before creating a pull request."
+            exit 1
+          fi
+
+          echo "source_branch=$source_branch" >> "$GITHUB_OUTPUT"
+
+      - name: Check for changes against main
+        id: compare
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_BRANCH: ${{ steps.payload.outputs.source_branch }}
+        run: |
+          status="$(gh api "repos/$GITHUB_REPOSITORY/compare/main...$SOURCE_BRANCH" --jq '.status')"
+          ahead_by="$(gh api "repos/$GITHUB_REPOSITORY/compare/main...$SOURCE_BRANCH" --jq '.ahead_by')"
+
+          if [ "$ahead_by" = "0" ]; then
+            echo "::notice::No changes between main and $SOURCE_BRANCH. Pull request was not created."
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update pull request
+        if: steps.compare.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_BRANCH: ${{ steps.payload.outputs.source_branch }}
+        run: |
+          existing_pr="$(gh pr list \
+            --repo "$GITHUB_REPOSITORY" \
+            --base main \
+            --head "$SOURCE_BRANCH" \
+            --state open \
+            --json number \
+            --jq '.[0].number // ""')"
+
+          if [ -n "$existing_pr" ]; then
+            echo "::notice::Pull request #$existing_pr already exists for $SOURCE_BRANCH."
+            gh pr view "$existing_pr" --repo "$GITHUB_REPOSITORY" --json url --jq '.url'
+            exit 0
+          fi
+
+          gh pr create \
+            --repo "$GITHUB_REPOSITORY" \
+            --base main \
+            --head "$SOURCE_BRANCH" \
+            --title "Update docs from PageCMS" \
+            --body "This pull request contains documentation changes made in PageCMS from the \`$SOURCE_BRANCH\` branch."

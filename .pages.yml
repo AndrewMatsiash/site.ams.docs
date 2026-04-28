@@ -4,6 +4,12 @@ media:
   rename: safe
   categories: [image]
 
+actions:
+  - name: create-pull-request
+    label: Create PR to main
+    workflow: pages-cms-create-pr.yml
+    ref: current
+
 content:
   - name: docs_ru
     label: Документация RU
