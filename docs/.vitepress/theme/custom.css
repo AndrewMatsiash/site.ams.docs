@@ -275,18 +275,3 @@
 .vp-doc .custom-block.details[open] summary::after {
   transform: rotate(90deg);
 }
-
-/* Скриншоты интерфейса PageCMS в docs */
-.vp-doc img[src*="pagecms-admin"] {
-  display: block;
-  width: 100%;
-  max-width: min(100%, 52rem);
-  margin: 12px auto 0;
-  height: auto;
-  border: 1px solid var(--vp-c-border);
-  border-radius: 8px;
-}
-
-.dark .vp-doc img[src*="pagecms-admin"] {
-  border-color: var(--vp-c-divider);
-}
