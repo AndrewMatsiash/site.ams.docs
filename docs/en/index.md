@@ -6,4 +6,4 @@ title: Home
 
 Documentation prototype.
 
-Go to the [UI Kit](/en/ui-kit).
+Russian documentation: [/docs](/docs).
