@@ -1,0 +1,4 @@
+---
+title: Whatsminer
+---
+Whatsminer content 
